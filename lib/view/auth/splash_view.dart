@@ -14,7 +14,9 @@ class SplashView extends ConsumerWidget {
     final user = ref.watch(localAuthProvider);
     // If null → show Login, else Home
     if (user == null) {
-      return const LoginView();
+      return const LoginView(
+        
+      );
     } else {
       return const HomeView();
     }

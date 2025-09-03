@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:job/view/home/home_view.dart';
 
 import '../../providers/auth_provider.dart';
 
@@ -33,6 +34,7 @@ class _SignupViewState extends ConsumerState<SignupView> {
     setState(() => _loading = false);
     if (res == null) {
       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Signup success")));
+      Navigator.push(context, MaterialPageRoute(builder: (_) => const HomeView()));
     } else {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(res)));
     }
