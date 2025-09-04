@@ -1,3 +1,4 @@
+// view/jobs/applied_jobs_view.dart
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -18,10 +19,19 @@ class AppliedJobsView extends ConsumerWidget {
               itemCount: appliedJobs.length,
               itemBuilder: (context, i) {
                 final job = appliedJobs[i];
-                return ListTile(
-                  leading: const Icon(Icons.work),
-                  title: Text(job.title),
-                  subtitle: Text("Resume: ${job.resumePath.split('/').last}"),
+                return Card(
+                  margin: const EdgeInsets.all(10),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12)),
+                  child: ListTile(
+                    leading: const Icon(Icons.work, color: Colors.green),
+                    title: Text(job.title,
+                        style: const TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 16)),
+                    subtitle: Text("${job.company}\nResume: ${job.resumePath.split('/').last}"),
+                    isThreeLine: true,
+                    trailing: const Icon(Icons.check_circle, color: Colors.blue),
+                  ),
                 );
               },
             ),

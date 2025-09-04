@@ -6,20 +6,20 @@ import 'package:job/core/app_color.dart';
 
 class AppTheme {
   static ThemeData light = ThemeData(
-    primaryColor: AppColors.primaryBlue,
-    scaffoldBackgroundColor: AppColors.backgroundLight,
+    primaryColor: AppColors.primary,
+    scaffoldBackgroundColor: AppColors.background,
     textTheme: GoogleFonts.robotoTextTheme().apply(
       bodyColor: AppColors.textDark,
       displayColor: AppColors.textDark,
     ),
     colorScheme: ColorScheme.light(
-      primary: AppColors.primaryBlue,
-      secondary: AppColors.secondaryTeal,
-      tertiary: AppColors.accentAmber,
-      background: AppColors.backgroundLight,
+      primary: AppColors.primary,
+      secondary: AppColors.secondary,
+      tertiary: AppColors.accent,
+      background: AppColors.background,
     ),
     appBarTheme: AppBarTheme(
-      backgroundColor: AppColors.primaryBlue,
+      backgroundColor: AppColors.primary,
       foregroundColor: Colors.white,
       titleTextStyle: GoogleFonts.roboto(
         color: Colors.white,
@@ -31,7 +31,7 @@ class AppTheme {
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-        backgroundColor: AppColors.primaryBlue,
+        backgroundColor: AppColors.primary,
         foregroundColor: Colors.white,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         textStyle: GoogleFonts.roboto(fontSize: 16, fontWeight: FontWeight.w600),

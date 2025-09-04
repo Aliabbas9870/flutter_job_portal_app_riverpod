@@ -11,6 +11,8 @@ class JobApplicationNotifier extends StateNotifier<List<AppliedJob>> {
   }
 }
 
+
+
 final jobApplicationProvider =
     StateNotifierProvider<JobApplicationNotifier, List<AppliedJob>>(
   (ref) => JobApplicationNotifier(),

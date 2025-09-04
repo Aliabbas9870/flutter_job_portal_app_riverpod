@@ -55,11 +55,12 @@ class _ProfileViewState extends ConsumerState<ProfileView> {
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(children: [
-          Text('Email: ${user.email}'),
+          Center(child: CircleAvatar(radius: 40, child: Text(user.fullName.isNotEmpty ? user.fullName[0].toUpperCase() : '?', style: const TextStyle(fontSize: 40)))),
+          Text('${user.fullName}'),
           const SizedBox(height: 8),
-          TextField(controller: _name, decoration: const InputDecoration(labelText: 'Full name')),
+          Text(user.email, style: const TextStyle(color: Colors.grey)),
           const SizedBox(height: 12),
-          SizedBox(width: double.infinity, child: ElevatedButton(onPressed: _loading ? null : _save, child: Text(_loading ? 'Saving...' : 'Save'))),
+          // SizedBox(width: double.infinity, child: ElevatedButton(onPressed: _loading ? null : _save, child: Text(_loading ? 'Saving...' : 'Save'))),
         ]),
       ),
     );

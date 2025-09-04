@@ -42,8 +42,14 @@ class _LoginViewState extends ConsumerState<LoginView> {
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(children: [
-          TextField(controller: _email, decoration: const InputDecoration(labelText: 'Email')),
-          TextField(controller: _password, decoration: const InputDecoration(labelText: 'Password'), obscureText: true),
+          TextField(controller: _email, decoration: const InputDecoration(labelText: 'Email',  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.green)),
+                enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey)))),
+          TextField(controller: _password, decoration: const InputDecoration(labelText: 'Password',  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.green)),
+                enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey))), obscureText: true),
           const SizedBox(height: 12),
           SizedBox(width: double.infinity, child: ElevatedButton(onPressed: _loading ? null : _login, child: Text(_loading ? 'Please wait...' : 'Login'))),
           TextButton(onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const SignupView())), child: const Text('No account? Sign up'))
